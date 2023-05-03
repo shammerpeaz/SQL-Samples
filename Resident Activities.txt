@@ -1,0 +1,84 @@
+--Text to create tables in PostgreSQL--
+
+create table residents
+(
+	resident_no integer,
+	resident_lname varchar(20),
+	age integer
+);
+
+insert into residents values (1, 'Adams', 62);
+insert into residents values (2, 'Bentley', 74);
+insert into residents values (3, 'Cunningham', 86);
+insert into residents values (4, 'Donovan', 65);
+insert into residents values (5, 'Eller', 95);
+insert into residents values (6, 'Francis', 72);
+insert into residents values (7, 'Gordon', 73);
+insert into residents values (8, 'Hotop', 82);
+insert into residents values (9, 'Ingalls', 68);
+insert into residents values (10, 'Jackson', 64);
+
+create table activities
+(
+	activity_id varchar(5),
+	activity_title varchar(20),
+	room_no integer
+);
+
+insert into activities values ('D', 'Dancing', 1);
+insert into activities values ('M', 'Music', 2);
+insert into activities values ('C', 'Crafts', 3);
+insert into activities values ('B', 'Board Games', 4);
+insert into activities values ('G', 'Mini Golf', 5);
+
+create table resident_enrollment
+(
+	resident_no integer,
+	activity_id varchar(5)
+);
+
+insert into resident_enrollment values (1, 'D');
+insert into resident_enrollment values (1, 'M');
+insert into resident_enrollment values (1, 'G');
+insert into resident_enrollment values (2, 'C');
+insert into resident_enrollment values (2, 'B');
+insert into resident_enrollment values (3, 'G');
+insert into resident_enrollment values (3, 'M');
+insert into resident_enrollment values (4, 'D');
+insert into resident_enrollment values (5, 'D');
+insert into resident_enrollment values (5, 'M');
+insert into resident_enrollment values (5, 'B');
+insert into resident_enrollment values (5, 'G');
+insert into resident_enrollment values (6, 'G');
+insert into resident_enrollment values (7, 'M');
+insert into resident_enrollment values (7, 'C');
+
+
+create table staff
+(
+	last_name varchar(20),
+	salary integer,
+	hire_date date
+);
+
+insert into staff values ('Chong', 48000, '2006-04-18');
+insert into staff values ('Brown', 43000, '2002-08-22');
+insert into staff values ('Jones', 67000, '2009-11-17');
+insert into staff values ('Wilson', 52000, '2005-01-15');
+insert into staff values ('Miller', 35000, '2008-05-08');
+insert into staff values ('Williams', 38000, '2001-06-05');
+
+create table activity_leaders
+(
+	last_name varchar(20),
+	activity_id varchar(5)
+);
+
+insert into activity_leaders values ('Chong', 'M');
+insert into activity_leaders values ('Brown', 'C');
+insert into activity_leaders values ('Brown', 'B');
+insert into activity_leaders values ('Jones', 'M');
+insert into activity_leaders values ('Jones', 'D');
+insert into activity_leaders values ('Wilson', 'C');
+insert into activity_leaders values ('Wilson', 'B');
+insert into activity_leaders values ('Williams', 'G');
